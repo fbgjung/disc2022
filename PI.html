@@ -12,6 +12,7 @@
     kk = 0
     nt = []  // 레이블
     pt = []  // 데이터
+    pi = []
     for ( i=0 ; i<100000001 ; i++ ) {
       x = Math.random()
       y = Math.random()
@@ -35,7 +36,7 @@
 
     function padd(t,k) {
       alert(t + ":" + k + ":" + 4*k/t)
-      nt.push(t); pt.push(4*k/t)
+      nt.push(t); pt.push(4*k/t); pi.push(Math.PI)
     }
 
 
@@ -52,7 +53,7 @@
             label : 'Pi (3.141592)',
             backgroundColor : ['red', 'green'],
             borderColor : 'red',
-            data : [3.14,3.14,3.14,3.14,3.14,3.14,3.14,3.14,3.14,3.14,3.14,3.14,3.14,3.14,3.14],
+            data : pi,
             tension : 0.5 }]            
     }
     
