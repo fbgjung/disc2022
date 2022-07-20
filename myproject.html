@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>할일 목록 앱</title>
+	<style>
+		#add-btn{
+			padding: 5px 10px;
+			border: 0;
+			background: #f80; color: white;
+			border-radius: 5px;
+		}
+		ul{ 
+			padding: 0; 
+			list-style-position: inside;
+		}
+		li{
+			border-bottom: 1px solid #999;
+			padding: 5px 0;
+		}
+		.active{ background: #abc; } /* step3: 목록 클릭 스타일 */
+	</style>
+</head>
+
+
+<body>
+	
+	<h1>내가 수강한 과목</h1>
+    <table border = 1>
+        <tr><th>3-1</th></tr>
+        <tr><td>확률과통계<br>
+                미분방정식<br>
+                경영과학<br>
+                공급사슬관리<br>
+                품질경영론<br>
+        </td></tr>
+        
+	</table>
+
+    <h1 id='title'>내 관심 분야</h1>
+	<button>목록 추가</button>
+	<ul>
+		<li>영화</li>
+		<li>독서</li>
+		<li>뮤지컬</li>
+		<li>음악</li>
+        <li>코딩연습ㅎㅎ</li>
+	</ul>
+
+    <h1 id='title'>프로젝트 주제</h1>
+	<button id="add-btn">목록 추가</button>
+	<ul id='list'>
+		<li>게시글 올리기</li>
+		<li>댓글 달기</li>
+		<li>뮤지컬 추천</li>
+		<li>책 추천</li>
+        
+	</ul>
+
+<script>
+
+	// 변수 초기화
+	var title = document.getElementById('title'); 
+	var list = document.getElementById('list');
+	var li = list.getElementsByTagName('li');
+	var addBtn = document.getElementById('add-btn');	// 목록 추가 버튼
+
+	// 이벤트리스너
+	list.addEventListener('click', activeItem); 
+
+	function activeItem(event){
+		// 클릭한 노드가 li이면 
+		if(event.target.nodeName == 'LI'){
+			// event.target은 클릭한 객체를 의미
+			title.innerHTML = event.target.innerText;	
+
+			// 목록 스타일 초기화
+			for(var i = 0; i < event.target.parentNode.children.length; i++){
+				event.target.parentNode.children[i].removeAttribute('class');
+			}
+			// 클릭한 목록 스타일 지정
+			event.target.setAttribute('class', 'active'); // 클릭한 대상			
+		}	// end if
+	}	// end function		
+
+	// 목록 추가
+	addBtn.addEventListener('click', function(){
+		var txt = prompt('제목 입력');
+		list.innerHTML += '<li>' + txt + '</li>';
+	});
+
+</script>	
+
+</body>
+</html>
