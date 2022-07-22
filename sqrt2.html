@@ -1,0 +1,50 @@
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style> div { position: relative; width:80vw; margin: auto } </style>
+    </head><body>
+    <div style="width:80vw"><h1>SQRT2 Calculation by 과기인</h1>
+    <canvas id="myChart"></canvas></div>
+    <script>
+    sqrt2try = []
+    trialnum = []
+    sqrt2val = []
+    high = 2
+    low = 1
+    delta = 0.00000001
+    for ( k=0 ; k<100 ; k++ ) {
+      sqrt2try[k] = (high + low)/2
+      sqrx = sqrt2try[k] * sqrt2try[k]
+      trialnum[k] = k+1
+      sqrt2val[k] = Math.SQRT2
+      if ( sqrx > 2 ) high = sqrt2try[k]
+      else if ( sqrx < 2 ) low = sqrt2try[k]
+      if ( Math.abs(2-sqrx) < delta ) break
+    }
+    document.querySelector("h1").innerHTML += " => " + sqrt2try[k]
+    datainfo = {
+      labels : trialnum,
+      datasets : [{
+        label : 'SQRT2 by Trial',
+        backgroundColor : ['gray', 'red'],
+        borderColor : 'blue',
+        data : sqrt2try,
+        tension : 0.5
+       },
+       {
+        label : 'SQRT2 (1.4142356)',
+        backgroundColor : ['gray', 'green'],
+        borderColor : 'red',
+        data : sqrt2val,
+        tension : 0.5
+       },
+       ]
+    }
+    const config = {
+      type : 'line',
+      data : datainfo
+    }
+    mychart = new Chart(document.getElementById("myChart"), config)
+    </script>
+    </body></html>
