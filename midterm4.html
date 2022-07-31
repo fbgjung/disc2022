@@ -1,0 +1,30 @@
+<head>
+    <style>
+        .color{
+            background-color:orange;
+        }
+    </style>
+
+    <h3>버튼을 눌러서 내용을 추가하세요</h3>    
+    <ul id="a"></ul>
+    <button id='addlist'>button</button>
+
+    <script>
+       
+        // 변수 초기화
+        var a = document.getElementById('a'); 
+        var addlist = document.getElementById('addlist');
+
+        // 클릭한 목록의 스타일 지정
+        a.addEventListener('click',setColor);
+        function setColor(e){
+            e.target.setAttribute('class','color')  
+        }
+
+        addlist.addEventListener('click', function(){
+            var txt = prompt('새로운 내용을 입력해주세요');
+            a.innerHTML += '<li>' + txt + '</li>';
+        })
+
+    </script>
+</head>
