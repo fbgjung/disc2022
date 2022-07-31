@@ -1,0 +1,40 @@
+<html>
+<head>
+    <script>
+        // 객체 생성
+        var data =[
+            {name:'Jinsu',
+             age:'21'},
+
+            {name:'Chulsu',
+             age:'20'}
+        ]
+
+        function setAverage1() {
+            var sum = Number(data[0].age) + Number(data[1].age);
+            var avg = sum/2
+            document.querySelector('button').innerHTML = avg
+        }
+
+        function setAverage2() {
+            var sum = Number(data[0].age)+1 + Number(data[1].age)+1;
+            var avg = sum/2
+            document.querySelectorAll('button')[1].innerHTML = avg
+            
+        }
+
+        function setAverage3() {
+            var sum = Number(data[0].age)+2 + Number(data[1].age)+2;
+            var avg = sum/2
+            document.querySelectorAll('button')[2].innerHTML = avg
+        }
+
+    </script>
+</head>
+
+<body>
+    <button onclick="setAverage1()">sum</button>
+    <button onclick="setAverage2()">sum</button>
+    <button onclick="setAverage3()">sum</button>
+</body>
+</html>
