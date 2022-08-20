@@ -1,0 +1,418 @@
+* {
+    text-decoration: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+}
+
+html {
+    background-color: rgb(237, 235, 235);
+    font-size: 90%;
+}
+
+body {
+    display: grid;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+ul {
+    list-style:none;
+}
+
+/* main page */
+.mainbar {
+    width:100%;
+    height:100px;
+    background-color: #222227;
+    color:white;
+    padding-left: 1000px;
+}
+
+#img2 {
+    width:100%;
+    height:630px;
+}
+.mainbar2{
+    width:100%;
+    height:50px;
+    background-color: #222227;
+}
+
+.loginbtn {
+    padding-right: 800px;
+    color: white;
+}
+
+/*index page*/
+.navbar {
+    height: 80px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222227;
+    padding: 8px 12px;
+    border-color: rgb(198, 81, 101) 20px;
+   
+}
+
+.logo {
+    font-style: italic;
+    padding-left:50px;
+    font-size: 30px;
+    color: white;
+}
+
+.theatre {
+    display: relative;
+    width:40px;
+    height:40px;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+
+.menu li {
+    padding: 8px 20px;
+    color: white;
+    position: relative;
+}
+
+.menu>li>a>span {
+    font-size: 0.5em;
+}
+
+.menu li:hover {
+    cursor: pointer;
+}
+
+/* 서브 메뉴 */
+.menu>li>ul {
+    display: none;
+    position:absolute;
+    width: 150px;
+    background-color: rgba(203, 216, 255, 0.429);
+    align-items: center;
+    margin:0;
+}
+
+.menu>li>ul>li {
+    padding: 10px 10px 10px 30px; /* 서브 메뉴 항목 지정 */
+}
+
+.menu>li>ul>li>a {
+    font-size: 14px;
+    padding:10px;
+    color: #000;
+}
+
+.menu>li:hover > ul {
+    display: block; /* 메인 메뉴 항목 위로 오버하면 서브메뉴 표시 */
+    z-index: 10;  /* 슬라이드쇼에 가리지 않게 조절 */
+    top: 30;
+}
+
+.menu >li > ul > li > a:hover {
+    color: rgb(14, 25, 88);
+} 
+
+
+
+
+/* 마이페이지, 로그인 바 */
+.mypage {
+    display:flex;
+    list-style: none;
+
+}
+
+.mypage button {
+    border:none;
+    margin:2px;
+    background-color: #222227;
+    font-size: 13px;
+    padding: 2px 4px;
+    color: grey;
+}
+.mypage button:hover {
+    cursor: pointer;
+}
+
+
+.mypage li {
+    font-size: 13px;
+    padding: 8px 10px;
+    color: grey;
+}
+
+
+
+
+.search {
+    display:flex;
+    padding-right:40px;
+    border-color: rgb(255, 0, 115) 1px;
+}
+.search #sr {
+    border-radius: 10px;
+    padding: 4px 10px;
+    
+}
+
+
+/* 그냥 빈공간 */
+.containerx {
+    width: 100%;
+    height: 100px;
+    background-color: aliceblue;
+}
+
+
+/* Calendar */
+.container {
+    width: 100%;
+    height: 480px;
+    background-color: aliceblue;
+    color: #eee;
+    display: flex;
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    padding-top: 40px;
+    padding-left: 80px;
+ 
+}
+
+.calendar {
+    float: left;
+    width: 400px;
+    height: 400px;
+    background-color: #222227;
+    box-shadow: 0 0.5rem 3rem rgba(0,0,0,0.4);
+    border-radius: 30px;
+}
+
+.month {
+    width: 100%;
+    height:7rem;
+    background-color: #0f0b38;
+    /*background-color: #167e56;*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    text-align:center;
+    text-shadow: 0 .3rem .5rem rgba(0,0,0,0.5);
+    left:0;
+    margin: 0;
+}
+
+.month i {
+
+}
+
+.month h1 {
+    font-weight:400;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1rem;
+}
+
+.month p {
+    font-size: 20x;
+}
+
+.weekdays {
+    width: 100%;
+    height: 5rem;
+    padding: 0 0.4rem;
+    display: flex;
+    align-items: centers;
+}
+
+.weekdays div {
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: .1rem;
+    width: calc(400px/7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 0.3rem 0.5rem rgba(0,0,0,0.5);
+}
+
+.days {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: .2rem;
+}
+
+.days div {
+    font-size: 12px;
+    margin: 0.3rem;
+    width: calc(330px/7);
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 0.3rem 0.5rem rgba(0,0,0,0.5);
+    transition: background-color 0.2s;
+}
+
+.days div:hover:not(.today) {
+    background-color:rgb(97, 156, 208);
+    border: 0.2rem solid rgb(255, 254, 254);
+    cursor: pointer;
+}
+
+.prev-date,
+.next-date {
+    opacity: 0.5;
+}
+
+.today {
+    background-color: rgb(36, 107, 169);
+    border-radius: 20px;
+}
+
+/* img */
+
+
+.picture {
+    display: flex;
+    padding-left: 20px;
+    width: 4px;
+    height: 20px;
+    
+}
+
+#msc1 {
+    padding-top: 20px;
+    padding-left: 30px;
+    display: block;
+    width: 170px;
+    height: 200px;
+}
+#msc2 {
+    display: flex;
+    padding-top: 20px;
+    padding-left: 25px;
+    display: block;
+    width: 170px;
+    height: 200px;
+}
+#msc3 {
+    display: flex;
+    padding-top: 20px;
+    padding-left: 25px;
+    display: block;
+    width: 170px;
+    height: 200px;
+}
+#msc4 {
+    display: flex;
+    padding-top: 20px;
+    padding-left: 25px;
+    display: block;
+    width: 170px;
+    height: 200px;
+}
+#msc5 {
+    display: flex;
+    padding-top: 20px;
+    padding-left: 25px;
+    display: block;
+    width: 170px;
+    height: 200px;
+}
+.hot {
+    color: black;
+    padding-left: 30px;
+    font-size: 15px;
+    padding-top: 10px;
+    padding-left: 50px;
+}
+
+/* picture 극장, 날짜 설명 */
+h2{
+    color:black;
+    display: center;
+    padding-left: 75px;
+    padding-top: 10px;
+    font-size: 12px;
+}
+h6{
+    color:rgb(124, 108, 108);
+    display: center;
+    padding-left: 55px;
+    padding-top: 3px;
+    font-size: 10px;
+
+}
+
+
+
+/* todolist */
+
+
+.container2 {
+    width: 100%;
+    height: 480px;
+    background-color: aliceblue;
+    color: #eee;
+    display: flex;
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    padding-top: 10px;
+    padding-left: 80px;
+}
+
+.todolist {
+
+    float: left;
+    width: 400px;
+    height: 400px;
+    background-color: #181645;
+    box-shadow: 0 0.5rem 3rem rgba(0,0,0,0.4);
+    border-radius: 30px;
+    border-style: dotted;
+}
+
+.important{
+    color: black;
+    padding-left: 30px;
+    font-size: 15px;
+    padding-top: 10px;
+    padding-left: 50px;
+}
+
+.container3 {
+    width: 100%;
+    height: 500px;
+    background-color: rgb(244, 234, 234);
+    color: #eee;
+    display: block;
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    padding-top: 10px;
+    padding-left: 80px;
+}
+
+.information {
+    width: 100%;
+    height: 300px;
+    background-color: rgb(31, 31, 31);
+    color: #eee;
+    display: block;
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    padding-top: 10px;
+    padding-left: 80px;
+
+}
