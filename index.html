@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to SCENE</title>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+    <div class="logo-container">
+        <h1>SCENE</h1>
+    </div>
+
+
+    <div class="container">
+        <!--슬라이드 쇼-->
+        <div class ="slides">
+            <img src="01.png" alt="">
+            <img src="img2.jpeg" alt="">
+            <button class="slidebtn" id="prev">&lang;</button>
+            <button class="slidebtn" id="next">&rang;</button>
+        </div>
+
+        <!-- 로그인 -->
+        <div class = 'login-container'>
+            <h1 id="welcome">Welcome!</h1>
+            <h4>SCENE에 오신 것을 환영합니다</h4>
+            <h4>다양한 공연 정보를 얻고, 나만의 일정을 계획해보세요!</h4>
+            <div class="login">
+                <input type="text" placeholder="아이디" id="id" class="account">
+                <input type="password" placeholder="비밀번호" id="password" class="account"><br>
+                <button id="loginbtn" class="account">login</button>
+                <p id="alert" class="account"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+
+
+
+</body>
+
+
+
+</html>

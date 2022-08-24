@@ -1,0 +1,142 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 10px 20px;
+}
+
+
+
+.wrap-whole {
+    display:flex;
+}
+
+/* 채팅 왼쪽 대화목록 */
+.wrap-left {
+    
+    border:1px solid #eee;
+    float:left;
+    background-color: rgb(251, 251, 251);
+    width:500px;
+    height:570;
+}
+
+.profile {
+    width:500px;
+    height: 80px;
+    cursor: pointer;
+    border:1px solid #ddd;
+}
+.profileimg {
+    margin-top: 15px;
+    margin-left: 10px;
+    width:50px;
+    height: 50px;
+    border-radius: 20px;
+    background-color:black;
+    position: absolute;
+   
+}
+
+
+
+
+
+.wrap-top {
+    margin-top:-20px;
+    float:right;
+    width:1000px;
+    height:50px;
+    background-color: rgb(172, 39, 39);
+}
+
+.who {
+    width:100%;
+    height: 80px;
+    
+}
+
+.wrap-right {
+    float:right;
+    padding: 20px 0;
+    background-color: rgb(247, 219, 230);
+    width:1000px;
+    height: 570px;
+}
+
+.wrap-right .chat {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.wrap-right .chat .icon {
+    position: relative;
+    overflow: hidden;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #eee;
+}
+
+.wrap-right .chat .icon i {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    font-size: 2.5rem;
+    color: #aaa;
+    transform: translateX(-50%);
+}
+
+.wrap-right .chat .textbox {
+    position: relative;
+    display: inline-block;
+    max-width: calc(100% - 70px);
+    padding: 10px;
+    margin-top: 7px;
+    font-size: 13px;
+    border-radius: 10px;
+}
+
+.wrap-right .chat .textbox::before {
+    position: absolute;
+    display: block;
+    top: 0;
+    font-size: 1.5rem;
+}
+
+.wrap-right .ch1 .textbox {
+    margin-left: 20px;
+    background-color: #ddd;
+}
+
+.wrap-right .ch1 .textbox::before {
+    left: -15px;
+    content: "◀";
+    color: #ddd;
+}
+
+.wrap-right .ch2 {
+    flex-direction: row-reverse;
+}
+
+.wrap-right .ch2 .textbox {
+    color:white;
+    margin-right: 20px;
+    background-color: #110a39;
+}
+
+.wrap-right .ch2 .textbox::before {
+    right: -15px;
+    content: "▶";
+    color: #110a39;
+}
