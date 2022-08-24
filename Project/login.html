@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <title>Login | jung</title>
+    <link rel="stylesheet" href="login.css">
+
+</head>
+<body>
+    <div>
+        <h1 class="welcome">Welcome!</h1>
+        <div class="login-container">
+            <input type="text" placeholder="ID" id="id" class="account">
+            <input type="password" placeholder="Password" id="password" class="account"><br>
+            <button id="login" class="account">login</button>
+            <p id="alert" class="account"></p>
+            <script>
+                login.addEventListener('click', () => {
+    if (id.value == 'aaaa') {
+    if (password.value == '0000') {
+                alert('log in!')
+                window.location.href="index.html";
+
+            }
+            else {
+                alert('아이디와 비밀번호를 다시 한 번 확인해주세요!')
+                errStack ++;
+            }
+        }
+        else {
+            alert('존재하지 않는 계정입니다.')
+        }
+    
+        if (errStack >= 5) {
+            alert('비밀번호를 5회 이상 틀리셨습니다. 비밀번호 찾기를 권장드립니다.')
+        }
+    })
+
+            </script>
+        </div>
+    </div>
+    </body>
+    </html>
